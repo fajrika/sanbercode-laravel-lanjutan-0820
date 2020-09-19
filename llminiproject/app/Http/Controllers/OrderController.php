@@ -16,7 +16,7 @@ class OrderController extends Controller
         $data = Product::with('category')->get()->toArray();
         Log::info('Load Product : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => $data
             ]
         );

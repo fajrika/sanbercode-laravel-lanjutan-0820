@@ -13,8 +13,8 @@ class Chat extends Model
     protected $keyType = 'string';
     public $incrementing = false;
     protected $guarded = [];
-
-    public function order_detail(){
+    
+    public function user(){
         return $this->belongsTo(User::class);
     }
 }

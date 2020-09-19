@@ -12,14 +12,12 @@ class UserSeed extends Seeder
     public function run()
     {
         User::create([
-            // 'id'  => DB::raw("select UUID()"),
             'name' => "AdminResto",
             'email' => "admin@gmail.com",
             'password' => Hash::make('admin'),
             'role_uuid' => Role::where('name','Admin')->first()->uuid,
         ]);
         User::create([
-            // 'id'  => DB::raw("select UUID()"),
             'name' => "Pelanggan Setia",
             'email' => "user@gmail.com",
             'password' => Hash::make('user'),

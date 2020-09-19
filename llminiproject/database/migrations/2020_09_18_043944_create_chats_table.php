@@ -15,7 +15,7 @@ class CreateChatsTable extends Migration
     {
         Schema::create('chats', function (Blueprint $table) {
             $table->uuid('uuid')->primary();
-            $table->longText('subject');
+            $table->longText('message');
             $table->uuid('user_uuid')->nullable();
             $table->timestamps();
             $table->foreign('user_uuid')->references('uuid')->on('users');

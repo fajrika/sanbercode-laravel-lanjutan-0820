@@ -15,7 +15,7 @@ class CategoryController extends Controller
         $data = Category::all();
         Log::info('Load Category : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => $data
             ]
         );
@@ -28,7 +28,7 @@ class CategoryController extends Controller
     {
         Log::info('Store Category : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => $request->all()
             ]
         );
@@ -51,7 +51,7 @@ class CategoryController extends Controller
         $data = $category->toArray();
         Log::info('Show Category : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => $data
             ]
         );
@@ -64,7 +64,7 @@ class CategoryController extends Controller
     {
         Log::info('Update Category : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => 
                     [
                         'from' => $category->toArray(),
@@ -90,7 +90,7 @@ class CategoryController extends Controller
     {
         Log::info('Delete Category : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => $category->toArray()
             ]
         );

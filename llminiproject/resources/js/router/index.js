@@ -66,6 +66,11 @@ export default {
             path: "/auth/login",
             name: "auth.login",
             component: () => import("../views/auth/Login")
+        },
+        {
+            path: "/auth/register",
+            name: "auth.register",
+            component: () => import("../views/auth/Register")
         }
     ]
 };

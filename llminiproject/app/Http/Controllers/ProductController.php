@@ -15,7 +15,7 @@ class ProductController extends Controller
         $data = Product::with('category')->get()->toArray();
         Log::info('Load Product : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => $data
             ]
         );
@@ -28,7 +28,7 @@ class ProductController extends Controller
     {
         Log::info('Store Product : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => $request->all()
             ]
         );
@@ -55,7 +55,7 @@ class ProductController extends Controller
         $data = Product::with('category')->where('products.uuid',$product->uuid)->first()->toArray();
         Log::info('Show Product : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => $data
             ]
         );
@@ -68,7 +68,7 @@ class ProductController extends Controller
     {
         Log::info('Update Product : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => 
                     [
                         'from' => $product->toArray(),
@@ -97,7 +97,7 @@ class ProductController extends Controller
     {
         Log::info('Delete Product : ', 
             [
-                'user' => User::find($request->header('Authorization'))->first()->toArray(),
+                'user' => User::where('uuid',$request->header('Authorization'))->first()->toArray(),
                 'data' => $product->toArray()
             ]
         );

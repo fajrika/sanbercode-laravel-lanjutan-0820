@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\Collection;
+use App\Http\Resources\DefaultResource;
 use App\Models\Role;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return new Collection([
+        return new DefaultResource([
             'message' => 'Success load all data',
             'metadata' => Role::all()
         ]);
@@ -32,7 +32,7 @@ class RoleController extends Controller
     {
         $role = new Role;
         
-        return new Collection([
+        return new DefaultResource([
             'message' => "Success load data, with uuid : $role->uuid",
             'metadata' => $role->toArray()
         ]);    
@@ -46,7 +46,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        return new Collection([
+        return new DefaultResource([
             'message' => "Success load data, with uuid : $role->uuid",
             'metadata' => $role->toArray()
         ]);

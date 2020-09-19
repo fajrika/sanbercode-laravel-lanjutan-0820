@@ -10,11 +10,9 @@ class RoleSeed extends Seeder
     public function run()
     {
         Role::create([
-            // 'id'  => DB::raw("select UUID()"),
             'name' => "Admin",
         ]); 
         Role::create([
-            // 'id'  => DB::raw("select UUID()"),
             'name' => "User",
         ]);
     }

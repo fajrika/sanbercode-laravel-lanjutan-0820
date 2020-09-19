@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-	  	Home Page
+	  	.::Welcome to RestoWeb::.
   	</div>
 </template>
 
